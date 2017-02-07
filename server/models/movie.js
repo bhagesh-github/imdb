@@ -1,0 +1,61 @@
+var mongoose = require("mongoose");
+
+var movieschema = new mongoose.Schema({
+  name:{
+    type:String,
+    required:true
+  },
+  tagline:{
+    type:String,
+  },
+  plot:{
+    type:String,
+    required:true
+  },
+  synopsis:{
+    type:String,
+    required:true
+  },
+  keywords:[
+    {
+      type:String,
+      required:true
+    }
+  ],
+  geners:[
+    {
+      type:String,
+      required:true
+    }
+  ]
+  /*casts:[
+    {
+        type:String,
+        required:true
+      }
+  ],
+  director:{
+    type:String,
+    required:true
+  },
+  writers:[
+    {
+        type:String,
+        required:true
+    }
+  ],
+  releases:[
+    {
+      date:{
+        type:String,
+        required:true
+      },
+      country:{
+        type:String,
+        required:true
+      }
+    }
+  ]*/
+});
+
+module.exports = mongoose.model("Movie",movieschema);
