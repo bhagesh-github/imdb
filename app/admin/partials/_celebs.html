@@ -46,11 +46,53 @@
     </div>
     <div class="col-sm-12" ng-if="vm.celeb.mstatus">
       <div class="row">
-        <div class="form-group">
-          <label>Spouse</label>
-        </div>
+	      <h4 class="col-sm-12">Spouse 1</h4>
+		  <div class="col-sm-4 form-group">
+		  	<label>Name</label>
+			<input type="text" class="form-control" ng-model="vm.celeb.spouse.name"/>
+		  </div>
+		  <div class="col-sm-4 form-group">
+		  	<label>From Date</label>
+			<input type="text" class="form-control" ng-model="vm.celeb.spouse.frmdate"/>
+		  </div>
+		  <div class="col-sm-4 form-group">
+		  	<label class="form-control-static"></label>
+			<div class="checkbox"><label><input type="checkbox" ng-model="vm.celeb.spouse.present"/> Present</label></div>
+		  </div>
+		  <div class="col-sm-4 form-group" ng-if="!vm.celeb.spouse.present">
+		  	<label>To Date</label>
+			<input type="text" class="form-control" ng-model="vm.celeb.spouse.todate"/>
+		  </div>
+		  <div class="col-sm-4 form-group" ng-if="!vm.celeb.spouse.present">
+		  	<label>Divorce Status</label>
+			<input type="text" class="form-control" ng-model="vm.celeb.spouse.divorce"/>
+		  </div>
+		  <div class="col-sm-4 form-group">
+		  	<label>Child(s)</label>
+			<input type="text" class="form-control" ng-model="vm.celeb.spouse.child"/>
+		  </div>
       </div>
     </div>
   </div>
+</fieldset>
+<fieldset>
+	<legend>Trade Marks</legend>
+	<div class="row">
+		<div class="form-group col-sm-12">
+			<label>Trade mark (1)</label>
+			<textarea ui-tinymce class="form-control" ng-model="vm.celeb.trademarks"/></textarea>
+		</div>
+		<div class="col-sm-12">
+			<input type="button" class="btn btn-info" value="Add Trade Mark"/>
+		</div>
+	</div>
+</fieldset>
+<fieldset>
+	<legend>Trivia</legend>
+	<div class="row">
+		<div class="form-group col-sm-12">
+			<textarea ui-tinymce class="form-control" ng-model="vm.celeb.trivia"/></textarea>
+		</div>
+	</div>
 </fieldset>
 <input type="submit" class="btn btn-primary" value="Save"/>
