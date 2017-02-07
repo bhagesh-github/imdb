@@ -1,0 +1,22 @@
+{
+  "name": "imdb",
+  "version": "1.0.0",
+  "description": "mean app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bhagesh",
+  "license": "ISC",
+  "devDependencies": {
+    "angular-chosen-localytics": "^1.5.1",
+    "del": "^2.2.2",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-print": "^2.0.1",
+    "q": "^1.4.1",
+    "tinymce": "^4.5.2"
+  }
+}
