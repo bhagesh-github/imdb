@@ -1,0 +1,58 @@
+<fieldset>
+  <legend>Storyline</legend>
+  <div class="row">
+  <div class="form-group col-sm-6">
+    <label>Movie Name</label>
+    <input type="text" class="form-control" ng-model="vm.movie.name"/>
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Movie Tagline</label>
+    <input type="text" class="form-control" ng-model="vm.movie.tagline"/>
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Movie Plot</label>
+    <textarea ui-tinymce class="form-control" ng-model="vm.movie.plot"></textarea>
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Movie Synopsis</label>
+    <textarea ui-tinymce class="form-control" ng-model="vm.movie.synopsis"/></textarea>
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Movie Keywords</label>
+    <input type="text" class="form-control" ng-model="vm.movie.keywords"/>
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Geners</label>
+    <input type="text" class="form-control" ng-model="vm.movie.geners"/>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+  <legend>Details</legend>
+  <div class="row">
+    <div class="form-group col-sm-12">
+      <div class="row">
+        <div class="col-xs-5">
+          <label>Cast name</label>
+          <input type="text" class="form-control"/>
+        </div>
+        <div class="col-xs-5">
+          <label>Charcter name</label>
+          <input type="text" class="form-control"/>
+        </div>
+        <div class="col-xs-2">
+          <input type="button" class="btn btn-info btn-block" value="+"/>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label>Director</label>
+      <input type="text" class="form-control" ng-model="vm.movie.director"/>
+    </div>
+    <div class="form-group col-sm-6">
+      <label>Writer</label>
+      <input type="text" class="form-control" ng-model="vm.movie.writer"/>
+    </div>
+  </div>
+</fieldset>
+<input type="submit" class="btn btn-primary" value="Save"/>

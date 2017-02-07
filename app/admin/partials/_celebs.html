@@ -1,0 +1,56 @@
+<fieldset>
+  <legend>Overview</legend>
+  <div class="row">
+    <div class="form-group col-sm-3">
+      <label>DOB</label>
+      <input type="text" class="form-control" ng-model="vm.celeb.dob"/>
+    </div>
+    <div class="form-group col-sm-3">
+      <label>City</label>
+      <input type="text" class="form-control" ng-model="vm.celeb.city"/>
+    </div>
+    <div class="form-group col-sm-3">
+      <label>State</label>
+      <input type="text" class="form-control" ng-model="vm.celeb.state"/>
+    </div>
+    <div class="form-group col-sm-3">
+      <label>Country</label>
+      <input type="text" class="form-control" ng-model="vm.celeb.country"/>
+    </div>
+    <div class="form-group col-sm-3">
+      <label>Other Name</label>
+      <input type="text" class="form-control" placeholder="Add comma separated names" ng-model="vm.celeb.names"/>
+    </div>
+    <div class="form-group col-sm-3">
+      <label>Height</label>
+      <input type="text" class="form-control" placeholder="in foot" ng-model="vm.celeb.height"/>
+    </div>
+  </div>
+</fieldset>
+<fieldset>
+  <legend>Biography</legend>
+  <div class="row">
+    <div class="form-group col-sm-12">
+      <label>Mini Bio</label>
+      <textarea ui-tinymce class="form-control" ng-model="vm.celeb.bio"/></textarea>
+    </div>
+  </div>
+</fieldset>
+<fieldset>
+  <legend>Martial Status</legend>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input type="checkbox" ng-model="vm.celeb.mstatus"/>Married</label>
+      </div>
+    </div>
+    <div class="col-sm-12" ng-if="vm.celeb.mstatus">
+      <div class="row">
+        <div class="form-group">
+          <label>Spouse</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+<input type="submit" class="btn btn-primary" value="Save"/>

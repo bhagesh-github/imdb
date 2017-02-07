@@ -1,0 +1,63 @@
+(function(){
+  angular
+  .module("imdbadmin",["ui.router","ngResource","ui.tinymce","localytics.directives"])
+  .config(config)
+  .run(run);
+  function config($stateProvider,$urlRouterProvider) {
+    $stateProvider.state("register",{
+      url:"/register",
+      templateUrl:"partials/register.html",
+      controller:"registerCtrl",
+      controllerAs:"vm",
+			data:{
+				requirelogin:false
+			}
+    })
+    .state("login",{
+      url:"/login",
+      templateUrl:"partials/login.html",
+      controller:"loginCtrl",
+      controllerAs:"vm",
+			data:{
+				requirelogin:false
+			}
+    })
+    .state("dashboard",{
+      url:"/",
+      templateUrl:"partials/dashboard.html",
+      data:{
+        requirelogin:true
+      }
+    })
+    .state("addmovie",{
+      url:"/movie/new",
+      templateUrl:"partials/add-movie.html",
+      controller:"addMovieCtrl",
+      controllerAs:"vm",
+      data:{
+        requirelogin:true
+      }
+    })
+    .state("addceleb",{
+      url:"/celeb/new",
+      templateUrl:"partials/add-celeb.html"
+      /*controller:"addCelebCtrl",
+      controllerAs:"vm",
+      data:{
+        requirelogin:true
+      }*/
+    });
+    $urlRouterProvider.when("","/");
+  };
+  function run($rootScope,$state,authenticate,$location) {
+    $rootScope.$on("$stateChangeStart",function(event,toState,toParams,fromState,fromParams){
+      var loginstatus = toState.data.requirelogin;
+      console.log(toState.name);
+      if(loginstatus === true && authenticate.isLoggedIn() === false && toState.name !== "login") {
+        console.log("test");
+        $state.go("login",{notify:false});
+        $location.path("/login");
+      }
+    })
+  }
+})();
